@@ -6,6 +6,7 @@
 
 var buttonsContainer = document.querySelector('.buttons');
 var output = document.querySelector('#output');
+var setTimerOutput = document.querySelector('#setTimerOutput');
 var start = document.querySelector('#start');
 var reset = document.querySelector('#reset');
 
@@ -20,18 +21,29 @@ function buttonsClickHandler(event) {
 }
 
 function startClickHandler(event) {
+  var timerAt = output.textContent;
   var interval = setInterval(function() {
     var currentNumber = output.textContent;
 
     if(currentNumber === '0') {
       clearInterval(interval);
+      setTimerOutput.textContent = "Time's up";
       return;
     }
-
     output.textContent = Number(currentNumber) - 1;
   }, 100);
+
+  setTimerOutput.textContent = "Timer set at " + String(timerAt) + " minutes.";
+
+
+}
+
+function resetClickHandler(event) {
+  output.textContent = 0;
+  setTimerOutput.textContent = "";
 }
 
 buttonsContainer.addEventListener('click', buttonsClickHandler);
 start.addEventListener('click', startClickHandler);
+reset.addEventListener('click',resetClickHandler);
 
