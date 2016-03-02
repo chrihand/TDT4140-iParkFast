@@ -31,7 +31,7 @@ function startClickHandler(event) {
       return;
     }
     output.textContent = Number(currentNumber) - 1;
-  }, 100);
+  }, 60000);
 
   setTimerOutput.textContent = "Timer set at " + String(timerAt) + " minutes.";
 
