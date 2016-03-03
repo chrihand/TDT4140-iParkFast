@@ -1,12 +1,19 @@
 body {
     background-color: rgb(26, 26, 26);
+    margin: 0Px;
+}
+
+header {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 h1 {
     color: rgb(44, 147, 209);
     font-family: "DIN Condensed";
     font-size: 105pt;
-    margin: 0px;
+    margin: 20px;
 }
 
 h1 > span {
@@ -15,12 +22,28 @@ h1 > span {
 }
 
 #logo {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
+    margin: 20px;
+    padding-top: 10px;
 }
 
-header {
+main {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+hr {
+    border-color: rgb(44, 147, 209);
+    border-width: 3px;
+}
+
+footer {
+
+}
+
+#footerContainer {
     display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 }
