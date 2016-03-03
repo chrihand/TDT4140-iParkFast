@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>iPark Fast {% block title %}{% endblock %}</title>
+    <title>iPark Fast</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <header>
+        <h1 id="ParkFastInHeader"><span>i</span>ParkFast</h1>
+        <img id="logo" src="static/images/ParkFastLogo.png" alt="ParkFastLogo"/>
+    </header>
     {% block content %}
     {% endblock %}
 </body>

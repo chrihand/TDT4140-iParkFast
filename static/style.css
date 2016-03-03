@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(26, 26, 26);
+}
+
+h1 {
+    color: rgb(44, 147, 209);
+    font-family: "DIN Condensed";
+    font-size: 105pt;
+    margin: 0px;
+}
+
+h1 > span {
+    font-family: "Avenir Next";
+    font-size: 105pt;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+}
+
+header {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
