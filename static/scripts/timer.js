@@ -29,19 +29,28 @@ function buttonsClickHandler(event) {
 
 function startClickHandler(event) {
   var timerAt = output.textContent;
+  var minAt = output.textContent;
+
   var interval = setInterval(function() {
     var currentNumber = output.textContent;
+    var currentNumberMin = outputMin.textContent;
 
-
-    if(currentNumber === '0') {
+    if((currentNumber == '0') && (currentNumberMin == '0')) {
       clearInterval(interval);
       setTimerOutput.textContent = "Time's up";
       return;
     }
-    output.textContent = Number(currentNumber) - 1;
-  }, 60000);
 
-  setTimerOutput.textContent = "Timer set at " + String(timerAt) + " minutes.";
+    if(!(currentNumberMin.length == 0)) {
+      var intervalMin = setInterval( function() {
+        outputMin.textContent = Number(currentNumberMin) - 1;
+      }, 100)
+    }
+
+    output.textContent = Number(currentNumber) - 1;
+  }, 100);
+
+  setTimerOutput.textContent = "Timer set at " + String(timerAt) + " hours and " + String(minAt) + " minutes.";
 
 
 }
