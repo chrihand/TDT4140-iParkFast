@@ -6,6 +6,7 @@
 
 var buttonsContainer = document.querySelector('.buttons');
 var output = document.querySelector('#output');
+var outputMin = document.querySelector('#outputHour');
 var setTimerOutput = document.querySelector('#setTimerOutput');
 var start = document.querySelector('#start');
 var reset = document.querySelector('#reset');
@@ -16,14 +17,21 @@ function buttonsClickHandler(event) {
 
   var number = element.dataset.number;
   var currentNumber = output.textContent;
+  var currentNumberMin = outputHour.textContent;
 
-  output.textContent = currentNumber === '0' ? number : currentNumber += number;
+  if (output.textContent.length < 2) {
+    output.textContent = currentNumber === '0' ? number : currentNumber += number;
+  } else {
+    outputHour.textContent = currentNumberMin === '0' ? number : currentNumberMin += number;
+  }
+
 }
 
 function startClickHandler(event) {
   var timerAt = output.textContent;
   var interval = setInterval(function() {
     var currentNumber = output.textContent;
+
 
     if(currentNumber === '0') {
       clearInterval(interval);
@@ -46,4 +54,3 @@ function resetClickHandler(event) {
 buttonsContainer.addEventListener('click', buttonsClickHandler);
 start.addEventListener('click', startClickHandler);
 reset.addEventListener('click',resetClickHandler);
-
