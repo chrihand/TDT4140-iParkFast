@@ -1,6 +1,10 @@
-body {
+* {
     background-color: rgb(26, 26, 26);
-    margin: 0Px;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
 }
 
 header {
@@ -38,8 +42,18 @@ hr {
     border-width: 3px;
 }
 
-footer {
+#page-wrap {
+    min-height: 100%;
+    margin-bottom: -150px;
+}
 
+#page-wrap:after {
+    content: "";
+    display: block;
+}
+
+#footer, .page-wrap:after {
+    height: 150px;
 }
 
 #footerContainer {
@@ -50,11 +64,13 @@ footer {
 	justify-content: center;
     margin: 10px;
     padding-left: 10px;
+    padding-right: 20px;
+    font-size: 5pt;
+    font-
 }
 
-#footerCourse {
+#footerCourse {
     margin: 10px;
-    font-size: 5pt;
 }
 
 #footerDev {
@@ -64,6 +80,6 @@ footer {
 #NTNULogo {
     width: 150px;
     height: 50px;
-    margin: 20px;
-    padding-top: 10px;
+    margin: 10px;
 }
+

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<div id="page-wrap">
     <header>
         <h1 id="ParkFastInHeader"><span>i</span>ParkFast</h1>
         <img id="logo" src="static/images/ParkFastLogo.png" alt="ParkFastLogo"/>
@@ -15,36 +16,37 @@
         {% block content %}
         {% endblock %}
     </main>
+</div>
 
     <footer>
         <hr noshade>
         <div id="footerContainer">
-        <div id="footerCourse">
-            <h2>TDT 4140 Software Engineering course, spring 2016</h2>
-            <p><b>Software Processes</b> Software Process Improvement</p>
-            <p><b>Agile Software Development</b> Configuration Management</p>
-            <p><b>Project Management and Planning</b> Software Evolution</p>
-            <p><b>System Modeling and Unified Modeling Language</b> Security</p>
-            <p><b>Architectural Design</b> Software Reuse</p>
-            <p><b>Software Design</b> Service Oriented Architecture</p>
-            <p><b>Software Testing</b> Software Quality Improvement</p>
-        </div>
+            <div id="footerCourse">
+                <h2>TDT 4140 Software Engineering course, spring 2016</h2>
+                <p><b>Software Processes</b> Software Process Improvement</p>
+                <p><b>Agile Software Development</b> Configuration Management</p>
+                <p><b>Project Management and Planning</b> Software Evolution</p>
+                <p><b>System Modeling and Unified Modeling Language</b> Security</p>
+                <p><b>Architectural Design</b> Software Reuse</p>
+                <p><b>Software Design</b> Service Oriented Architecture</p>
+                <p><b>Software Testing</b> Software Quality Improvement</p>
+            </div>
 
-        <div id="footerDev">
-            <h2>Developemnt team</h2>
-            <p><b>Astrid Nerhus Dale</b> - Raspberry Pi responsible</p>
-            <p><b>Christian Ziegenhahn Jensen</b> - Developer</p>
-            <p><b>Christina H. Andresen</b> - System designer</p>
-            <p><b>Einar Bogsnes Hegge</b> - Lead architect</p>
-            <p><b>Ingrid Skar</b> - Tester</p>
-            <p><b>Irene Halsten Nyborg</b> - Developer</p>
-            <p><b>Monika Buås-Hansen</b> - Development Team Leader</p>
-            <p><b>Silje Sævig</b> - Scrum Master</p>
-        </div>
+            <div id="footerDev">
+                <h2>Developemnt team</h2>
+                <p><b>Astrid Nerhus Dale</b> - Raspberry Pi responsible</p>
+                <p><b>Christian Ziegenhahn Jensen</b> - Developer</p>
+                <p><b>Christina H. Andresen</b> - System designer</p>
+                <p><b>Einar Bogsnes Hegge</b> - Lead architect</p>
+                <p><b>Ingrid Skar</b> - Tester</p>
+                <p><b>Irene Halsten Nyborg</b> - Developer</p>
+                <p><b>Monika Buås-Hansen</b> - Development Team Leader</p>
+                <p><b>Silje Sævig</b> - Scrum Master</p>
+            </div>
 
-        <div id="footerLogo">
-            <img id="NTNULogo" src="static/images/NTNULogo.png" alt="NTNULogo"/>
-        </div>
+            <div id="footerLogo">
+                <img id="NTNULogo" src="static/images/NTNULogo.png" alt="NTNULogo"/>
+            </div>
         </div>
 
     </footer>
