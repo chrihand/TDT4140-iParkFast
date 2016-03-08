@@ -43,7 +43,6 @@ footer {
 }
 
 #footerContainer {
-    font-size: 5pt;
     font-family: "Avenir Next";
     color: rgb(150, 154, 153);
     display: flex;
@@ -51,6 +50,15 @@ footer {
 	justify-content: center;
     margin: 10px;
     padding-left: 10px;
+}
+
+#footerCourse {
+    margin: 10px;
+    font-size: 5pt;
+}
+
+#footerDev {
+    margin: 10px;
 }
 
 #NTNULogo {
