@@ -11,6 +11,8 @@ var setTimerOutput = document.querySelector('#setTimerOutput');
 var start = document.querySelector('#start');
 var reset = document.querySelector('#reset');
 
+var interval;
+
 function buttonsClickHandler(event) {
   var element = event.target;
   if(element.nodeName !== 'BUTTON') { return; }
@@ -19,45 +21,61 @@ function buttonsClickHandler(event) {
   var currentNumber = output.textContent;
   var currentNumberMin = outputHour.textContent;
 
-  if (output.textContent.length < 2) {
+  if (output.textContent.length <= 1) {
     output.textContent = currentNumber === '0' ? number : currentNumber += number;
   } else {
-    outputHour.textContent = currentNumberMin === '0' ? number : currentNumberMin += number;
+    outputMin.textContent = currentNumberMin === '0' ? number : currentNumberMin += number;
   }
 
 }
 
 function startClickHandler(event) {
-  var timerAt = output.textContent;
-  var minAt = output.textContent;
+  var timerAt = Number(output.textContent);
+  var minAt = outputMin.textContent;
 
-  var interval = setInterval(function() {
-    var currentNumber = output.textContent;
-    var currentNumberMin = outputMin.textContent;
+  if (timerAt != 0) {
 
-    if((currentNumber == '0') && (currentNumberMin == '0')) {
-      clearInterval(interval);
-      setTimerOutput.textContent = "Time's up";
-      return;
-    }
+    for (var i  = timerAt; i > 0; i--) {
 
-    if(!(currentNumberMin.length == 0)) {
-      var intervalMin = setInterval( function() {
-        outputMin.textContent = Number(currentNumberMin) - 1;
-      }, 100)
-    }
+    interval = setInterval(function() {
 
-    output.textContent = Number(currentNumber) - 1;
-  }, 100);
+      var currentNumber = output.textContent;
+      var currentNumberMin = outputMin.textContent;
+
+      if (Number(outputMin.textContent) == 0) {
+        outputMin.textContent = "59";
+        currentNumberMin = 59;
+        output.textContent = Number(currentNumber) - 1;
+      }
+
+      if((Number(output.textContent) == 0) && (Number(outputMin.textContent) == 0)) {
+        stopClock();
+      }
+
+      outputMin.textContent = Number(currentNumberMin) - 1;
+    }, 2000)
+  }
+  }
 
   setTimerOutput.textContent = "Timer set at " + String(timerAt) + " hours and " + String(minAt) + " minutes.";
 
 
 }
 
+function stopClock() {
+  output.textContent = 0;
+  outputMin.textContent = 0;
+  setTimerOutput.textContent = "Time's up";
+  return;
+}
+
 function resetClickHandler(event) {
   output.textContent = 0;
+  outputMin.textContent = 0;
   setTimerOutput.textContent = "";
+  clearInterval(interval);
+  return;
+
 }
 
 buttonsContainer.addEventListener('click', buttonsClickHandler);
