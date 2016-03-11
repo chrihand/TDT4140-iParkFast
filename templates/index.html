@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+<div class="login">
+    <h3 class="middleHeader">Log in</h3>
+    <form action="/timer" method="post">
+        <input type="email" name="email" value="" autocomplete="off" placeholder="Email" required/>
+        <input type="password" name="password" value="" autocomplete="off" placeholder="Password" required/>
+        <button type="submit">Log in</button>
+    </form>
+</div>
+<div class="signout">
+    <h3 class="middelHeader">Sign up</h3>
+    <form action="/timer" method="post">
+        <input type="text" name="carReg" value="" autocomplete="off" placeholder="Car registration number" required/>
+        <input type="text" name="firstName" value="" autocomplete="off" placeholder="First name" required/>
+        <input type="text" name="lastName" value="" autocomplete="off" placeholder="Last name" required/>
+        <input type="email" name="email" value="" autocomplete="off" placeholder="Email" required/>
+        <input type="password" name="password" value="" autocomplete="off" placeholder="Password" required/>
+        <button type="submit">Log in</button>
+    </form>
+</div>
+
+</body>
+{% endblock %}
