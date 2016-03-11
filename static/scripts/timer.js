@@ -32,18 +32,39 @@ function buttonsClickHandler(event) {
   }
 
 
+}
+
+function startClickHandler(event) {
+  var hour = output.textContent;
+  var minute = output.textContent;
+
+  handleMinutes();
+  handleHours();
+
+  setTimerOutput.textContent = "Timer set at " + String(hour) + " minutes.";
 
 
 }
 
-function startClickHandler(event) {
-  var timerAt = output.textContent;
+function handleMinutes() {
+  var interval = setInterval(function() {
+    var currentNumber = outputMin.textContent;
+    var currentHour = output.textContent;
 
-  handleHours();
+    if(currentNumber === '0') {
+      if(Number(currentHour) < 0) {
+        for(var i = Number(currentHour); i < 0; i--) {
+          outputMin.textContent = 59;
+        }
+      } else {
+        clearInterval(interval);
+        setTimerOutput.textContent = "Time's up";
+      }
+    } else {
+      outputMin.textContent = Number(currentNumber) - 1;
+    }
 
-  setTimerOutput.textContent = "Timer set at " + String(timerAt) + " minutes.";
-
-
+  }, 1000);
 }
 
 function handleHours() {
@@ -52,19 +73,17 @@ function handleHours() {
 
     if(currentNumber === '0') {
       clearInterval(interval);
-      setTimerOutput.textContent = "Time's up";
       return;
     }
+
     output.textContent = Number(currentNumber) - 1;
-  }, 100);
+  }, 60000);
 }
 
-function handleMinutes() {
-
-}
 
 function resetClickHandler(event) {
   output.textContent = 0;
+  outputMin.textContent = 0;
   setTimerOutput.textContent = "";
 }
 
