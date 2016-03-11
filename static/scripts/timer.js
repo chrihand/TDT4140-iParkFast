@@ -6,12 +6,12 @@
 
 var buttonsContainer = document.querySelector('.buttons');
 var output = document.querySelector('#output');
-var outputMin = document.querySelector('#outputHour');
+var outputMin = document.querySelector('#outputMin');
 var setTimerOutput = document.querySelector('#setTimerOutput');
 var start = document.querySelector('#start');
 var reset = document.querySelector('#reset');
-
-var interval;
+var hour;
+var minute;
 
 function buttonsClickHandler(event) {
   var element = event.target;
@@ -19,63 +19,53 @@ function buttonsClickHandler(event) {
 
   var number = element.dataset.number;
   var currentNumber = output.textContent;
-  var currentNumberMin = outputHour.textContent;
+  var currentMin = outputMin.textContent;
 
-  if (output.textContent.length <= 1) {
+  if(currentNumber.length < 2) {
     output.textContent = currentNumber === '0' ? number : currentNumber += number;
+    console.log("added number to hours");
   } else {
-    outputMin.textContent = currentNumberMin === '0' ? number : currentNumberMin += number;
+    if(currentMin.length < 2) {
+      outputMin.textContent = currentMin === '0' ? number : currentMin += number;
+      console.log("added number to minutes");
+    }
   }
+
+
+
 
 }
 
 function startClickHandler(event) {
-  var timerAt = Number(output.textContent);
-  var minAt = outputMin.textContent;
+  var timerAt = output.textContent;
 
-  if (timerAt != 0) {
+  handleHours();
 
-    for (var i  = timerAt; i > 0; i--) {
-
-    interval = setInterval(function() {
-
-      var currentNumber = output.textContent;
-      var currentNumberMin = outputMin.textContent;
-
-      if (Number(outputMin.textContent) == 0) {
-        outputMin.textContent = "59";
-        currentNumberMin = 59;
-        output.textContent = Number(currentNumber) - 1;
-      }
-
-      if((Number(output.textContent) == 0) && (Number(outputMin.textContent) == 0)) {
-        stopClock();
-      }
-
-      outputMin.textContent = Number(currentNumberMin) - 1;
-    }, 2000)
-  }
-  }
-
-  setTimerOutput.textContent = "Timer set at " + String(timerAt) + " hours and " + String(minAt) + " minutes.";
+  setTimerOutput.textContent = "Timer set at " + String(timerAt) + " minutes.";
 
 
 }
 
-function stopClock() {
-  output.textContent = 0;
-  outputMin.textContent = 0;
-  setTimerOutput.textContent = "Time's up";
-  return;
+function handleHours() {
+  var interval = setInterval(function() {
+    var currentNumber = output.textContent;
+
+    if(currentNumber === '0') {
+      clearInterval(interval);
+      setTimerOutput.textContent = "Time's up";
+      return;
+    }
+    output.textContent = Number(currentNumber) - 1;
+  }, 100);
+}
+
+function handleMinutes() {
+
 }
 
 function resetClickHandler(event) {
   output.textContent = 0;
-  outputMin.textContent = 0;
   setTimerOutput.textContent = "";
-  clearInterval(interval);
-  return;
-
 }
 
 buttonsContainer.addEventListener('click', buttonsClickHandler);
