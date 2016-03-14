@@ -9,16 +9,15 @@ html, body {
 }
 
 main {
-    margin-top: 75px;
-    padding-left: 35%;
-    padding-right: 30%;
+    margin-left: 17%;
+    margin-right: 17%;
 }
 
 header {
     display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-    height: 100pt;
+    height: 150pt;
 }
 
 h1 {
@@ -35,6 +34,7 @@ h1 {
     padding-top: 40px;
     padding-right: 25px;
     padding-left: 25px;
+    padding-bottom: 20px;
     font-family: "DIN Condensed";
     color: rgb(150, 154, 153);
     margin-top: 60px;
@@ -42,34 +42,13 @@ h1 {
     margin-left: 10px;
 }
 
-@media (max-width: 600px) {
-  #parkFastLogo {
-      border-style: solid;
-      border-color: rgb(44, 147, 209);
-      border-width: 2pt;
-      padding-top: 40px;
-      padding-right: 25px;
-      padding-left: 25px;
-      font-family: "DIN Condensed";
-      color: rgb(150, 154, 153);
-      margin-top: 60px;
-      margin-bottom: 70px;
-      margin-left: 10px;
-      visibility: hidden;
-  }
-}
 
 h1 > span {
     font-family: "Avenir Next";
     font-size: 105pt;
 }
 
-#logo {
-    width: 130px;
-    height: 130px;
-    margin: 20px;
-    padding-top: 10px;
-}
+
 
 
 hr {
@@ -79,7 +58,7 @@ hr {
 
 #page-wrap {
     min-height: 100%;
-    margin-bottom: -150px;
+    margin-bottom: -0px;
 }
 
 #page-wrap:after {
@@ -88,7 +67,7 @@ hr {
 }
 
 #footer, .page-wrap:after {
-    height: 150px;
+    height: 0px;
 }
 
 #footerContainer {
@@ -114,19 +93,20 @@ hr {
 #NTNULogo {
     width: 150px;
     height: 50px;
-    margin: 10px;
+    margin: 22px 10px 10px 10px;
 }
 
 h3.grayheader {
     font-family: "Avenir Next Demi Bold";
     color: rgb(150, 154, 153);
-    font-size: 20pt;
+    font-size: 25pt;
+    margin: 5px;
 }
 
 
 input {
     border-width: 1pt;
-    border-color: rgb(44, 147, 209);;
+    border-color: rgb(44, 147, 209);
     border-radius: 25px;
     border-style: solid;
     padding: 15px 50px 15px 15px;
@@ -152,4 +132,114 @@ button {
     color: rgb(150, 154, 153);
     font-size: 12pt;
     font-weight: bold;
+    transition: background 0.2s ease-out, border 0.2s ease-out;
+}
+
+
+
+h3.timerheader {
+    font-family: "Avenir Next Demi Bold";
+    color: rgb(150, 154, 153);
+    font-size: 25pt;
+    margin: 5px;
+    text-align: center;
+}
+
+div.button-wrapper {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+button.timerbuttons {
+    font-family: "Avenir Next";
+    color: rgb(150, 154, 153);
+    font-size: 12pt;
+    font-weight: bold;
+    border-width: 3pt;
+    border-color: rgb(150, 154, 153);
+    border-radius: 25px;
+    border-style: solid;
+    padding: 15px 15px 15px 15px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: rgb(44, 147, 209);
+    background: rgb(150, 154, 153);
+    border-color: rgb(150, 154, 153);
+}
+
+div.outputtimer {
+    font-family: "Avenir Next Demi Bold";
+    color: rgb(150, 154, 153);
+    font-size: 30pt;
+    text-align: center;
+    padding: 10px;
+    border-color: rgb(44, 147, 209);
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 1pt;
+    width: 25%;
+    margin-left: 36.5%;
+}
+
+div.outputparked {
+    font-family: "Avenir Next Demi Bold";
+    color: rgb(150, 154, 153);
+    font-size: 46pt;
+    text-align: center;
+    padding: 10px;
+    border-width: 1pt;
+    border-color: rgb(44, 147, 209);
+    border-style: solid;
+    border-radius: 25px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+@media (max-width: 700px) {
+  #parkFastLogo {
+      border-style: solid;
+      border-color: rgb(44, 147, 209);
+      border-width: 2pt;
+      padding-top: 40px;
+      padding-right: 25px;
+      padding-left: 25px;
+      font-family: "DIN Condensed";
+      color: rgb(150, 154, 153);
+      margin-top: 60px;
+      margin-bottom: 70px;
+      margin-left: 10px;
+      visibility: hidden;
+  }
+div.outputtimer {
+    font-family: "Avenir Next Demi Bold";
+    color: rgb(150, 154, 153);
+    font-size: 20pt;
+    text-align: center;
+    padding: 10px;
+    border-color: rgb(44, 147, 209);
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 1pt;
+    width: 40%;
+    margin-left: 27%;
+}
+    div.outputparked {
+    font-family: "Avenir Next Demi Bold";
+    color: rgb(150, 154, 153);
+    font-size: 20pt;
+    text-align: center;
+    padding: 10px;
+    border-width: 1pt;
+    border-color: rgb(44, 147, 209);
+    border-style: solid;
+    border-radius: 25px;
+    width: 50%;
+    margin-left: 23%;
+}
+
+
 }
