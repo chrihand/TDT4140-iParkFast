@@ -30,18 +30,15 @@ function buttonsClickHandler(event) {
       console.log("added number to minutes");
     }
   }
-
-
 }
 
 function startClickHandler(event) {
   var hour = output.textContent;
-  var minute = output.textContent;
+  var minute = outputMin.textContent;
 
   handleMinutes();
-  handleHours();
 
-  setTimerOutput.textContent = "Timer set at " + String(hour) + " minutes.";
+  setTimerOutput.textContent = "Timer set at " + String(hour) + " hours and " + String(minute) + " minutes.";
 
 
 }
@@ -51,33 +48,25 @@ function handleMinutes() {
     var currentNumber = outputMin.textContent;
     var currentHour = output.textContent;
 
-    if(currentNumber === '0') {
-      if(Number(currentHour) < 0) {
-        for(var i = Number(currentHour); i < 0; i--) {
-          outputMin.textContent = 59;
-        }
-      } else {
-        clearInterval(interval);
-        setTimerOutput.textContent = "Time's up";
+    if(currentNumber == 0) {
+      if(currentHour.valueOf(0)) {
+        outputMin.textContent = 59;
+        handleHours();
+      } else if(currentHour.valueOf(0) && currentNumber.valueOf(0)){
+          setTimerOutput.textContent = "Time's up";
+          clearInterval(interval);
       }
     } else {
       outputMin.textContent = Number(currentNumber) - 1;
     }
 
-  }, 1000);
+  }, 100);
 }
 
 function handleHours() {
-  var interval = setInterval(function() {
-    var currentNumber = output.textContent;
+  var currentNumber = output.textContent;
+  output.textContent = Number(currentNumber) - 1;
 
-    if(currentNumber === '0') {
-      clearInterval(interval);
-      return;
-    }
-
-    output.textContent = Number(currentNumber) - 1;
-  }, 60000);
 }
 
 
