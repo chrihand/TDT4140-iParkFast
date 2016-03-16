@@ -13,5 +13,9 @@ def hello_world():
 def timer():
     return render_template('timer.html')
 
+@app.route('/index')
+def login():
+    return render_template('index.html')
+
 if __name__ == '__main__':
     app.run()
