@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <main>
-      <output id="output" class="console">0</output>
+    <h3 class="timerheader">Parked in:</h3>
+    <div class="outputparked">0h 0min</div>
+
+    <h3 class="timerheader">Set timer:</h3>
+    <div class="outputtimer"><output id="output" class="console">0</output> : <output id="outputMin" class="console">0</output></div>
       <div class="buttons">
-        <button data-number="1" type="button" class="button button--number">1</button>
-        <button data-number="2" type="button" class="button button--number">2</button>
-        <button data-number="3" type="button" class="button button--number">3</button>
-        <button data-number="4" type="button" class="button button--number">4</button>
-        <button data-number="5" type="button" class="button button--number">5</button>
-        <button data-number="6" type="button" class="button button--number">6</button>
-        <button data-number="7" type="button" class="button button--number">7</button>
-        <button data-number="8" type="button" class="button button--number">8</button>
-        <button data-number="9" type="button" class="button button--number">9</button>
-        <button data-number="0" type="button" class="button button--number">0</button>
+        <div class="button-wrapper">
+            <button class="timerbuttons" data-number="1" type="button" class="button button--number">1</button>
+            <button class="timerbuttons" data-number="2" type="button" class="button button--number">2</button>
+            <button class="timerbuttons" data-number="3" type="button" class="button button--number">3</button>
+        </div>
+          <div class="button-wrapper">
+            <button class="timerbuttons" data-number="4" type="button" class="button button--number">4</button>
+            <button class="timerbuttons" data-number="5" type="button" class="button button--number">5</button>
+            <button class="timerbuttons" data-number="6" type="button" class="button button--number">6</button>
+          </div>
+          <div class="button-wrapper">
+            <button class="timerbuttons" data-number="7" type="button" class="button button--number">7</button>
+            <button class="timerbuttons" data-number="8" type="button" class="button button--number">8</button>
+            <button class="timerbuttons" data-number="9" type="button" class="button button--number">9</button>
+          </div>
+          <div class="button-wrapper">
+            <button class="timerbuttons" data-number="0" type="button" class="button button--number">0</button>
+          </div>
       </div>
-      <button id="start" type="button" class="button button--main">Start</button>
+    <div class="button-wrapper">
+        <button id="start" type="button" class="button button--main">Start</button>
         <button id="reset" type="button" class="button button--main">Reset</button>
-    <output id="setTimerOutput" class="console"> </output>
-    </main>
+    </div>
+    <h3 class="timerheader"><output id="setTimerOutput" class="console"> </output></h3>
     <script src="../static/scripts/timer.js"></script>
 {% endblock %}
