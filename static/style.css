@@ -11,6 +11,7 @@ html, body {
 main {
     margin-left: 17%;
     margin-right: 17%;
+    margin-top: 20px;
 }
 
 header {
@@ -24,7 +25,9 @@ h1 {
     color: rgb(44, 147, 209);
     font-family: "DIN Condensed";
     font-size: 105pt;
-    margin: 20px;
+    margin:20px;
+    width: 450px !important;
+
 }
 
 #parkFastLogo {
@@ -58,7 +61,7 @@ hr {
 
 #page-wrap {
     min-height: 100%;
-    margin-bottom: -0px;
+    margin-bottom: 0px;
 }
 
 #page-wrap:after {
@@ -67,16 +70,19 @@ hr {
 }
 
 #footer, .page-wrap:after {
-    height: 0px;
+    height: 150px;
 }
 
 #footerContainer {
+    position: relative;
     font-family: "Avenir Next";
     color: rgb(150, 154, 153);
     display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-    margin: 10px;
+    margin: 10px 10px -150px 10px;
+    height: 150px;
+    clear: both;
     padding-left: 10px;
     padding-right: 20px;
     font-size: 5pt;
@@ -103,6 +109,11 @@ h3.grayheader {
     margin: 5px;
 }
 
+div.center {
+    margin: auto;
+    width: 55%;
+    padding: 10px;
+}
 
 input {
     border-width: 1pt;
@@ -240,6 +251,4 @@ div.outputtimer {
     width: 50%;
     margin-left: 23%;
 }
-
-
 }
