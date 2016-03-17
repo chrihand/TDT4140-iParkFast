@@ -30,7 +30,10 @@ function hourMinCounter(hourCounter, minCounter) {
         if (minCounter == 0) {
             if (hourCounter == 0) {
                 clearInterval(intervalTime);
-                displayOutput.innerHTML = "The parking ticket is yours!";
+                displayOutput.innerHTML = "Timer is done, be aware of parking tickets!";
+                setTimeout(function() {
+                    displayOutput.innerHTML=''
+                }, 10000);
                 hourCounter = 00;
                 minCounter = 00;
             }
@@ -43,7 +46,7 @@ function hourMinCounter(hourCounter, minCounter) {
 
             displayTime.innerHTML = formatTime(hourCounter, 2) + " : " + formatTime(minCounter, 2);
         }
-    }, 100)
+    }, 1000)
 }
 
 function checkTimer() {
@@ -66,7 +69,7 @@ function checkTimer() {
             displayOutput.innerHTML = "Timer is wrong, set new time."
             setTimeout(function() {
                 displayOutput.innerHTML=''
-            }, 5000);
+            }, 50000);
         }
     } else if (hoursNow < hours) {
         if (minNow <= minutes) {
@@ -93,14 +96,14 @@ function checkTimer() {
             displayOutput.innerHTML = "Timer is wrong, set new time."
             setTimeout(function() {
                 displayOutput.innerHTML=''
-            }, 5000);
+            }, 50000);
         }
     } else {
         console.log("Timer is wrong")
         displayOutput.innerHTML = "Timer is wrong, set new time."
         setTimeout(function () {
             displayOutput.innerHTML = ''
-        }, 5000);
+        }, 50000);
 
     }
 }
