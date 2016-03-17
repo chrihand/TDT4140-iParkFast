@@ -49,7 +49,7 @@ function handleMinutes() {
     var currentHour = output.textContent;
 
     if(currentNumber == 0) {
-      if(currentHour.valueOf() > 0) {
+      if(currentHour.valueOf() > 0 ) {
         outputMin.textContent = 59;
         handleHours();
       } else if(currentHour.valueOf(0) && currentNumber.valueOf(0)){
