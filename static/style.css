@@ -48,7 +48,8 @@ h1 > span {
 }
 
 h3.timerheader {
-    font-family: "Avenir Next Demi Bold";
+    font-family: "Avenir Next";
+    font-weight: 600;
     color: rgb(150, 154, 153);
     font-size: 35pt;
     margin: 5px;
@@ -107,7 +108,8 @@ hr {
 }
 
 h3.grayheader {
-    font-family: "Avenir Next Demi Bold";
+    font-family: "Avenir Next";
+    font-weight: 600;
     color: rgb(150, 154, 153);
     font-size: 25pt;
     margin: 5px;
@@ -146,7 +148,7 @@ button {
     font-family: "Avenir Next";
     color: rgb(150, 154, 153);
     font-size: 12pt;
-    font-weight: bold;
+    font-weight: 600;
     transition: background 0.2s ease-out, border 0.2s ease-out;
 }
 
@@ -185,7 +187,8 @@ button:hover {
 }
 
 div.outputtimer {
-    font-family: "Avenir Next Demi Bold";
+    font-family: "Avenir Next";
+    font-weight: 600;
     color: rgb(44, 147, 209);
     font-size: 50pt;
     text-align: center;
@@ -195,13 +198,14 @@ div.outputtimer {
 }
 
 div.outputparked {
-    font-family: "Avenir Next Demi Bold";
+    font-family: "Avenir Next";
+    font-weight: 600;
     color: rgb(44, 147, 209);
     font-size: 60pt;
     text-align: center;
     padding: 10px;
-    width: 60%;
-    margin-left: 20%;
+    width: 65%;
+    margin-left: 18%;
 }
 
 input.timerinput {
