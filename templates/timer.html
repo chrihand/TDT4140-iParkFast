@@ -5,8 +5,10 @@
     <div class="outputparked" id="parkedoutput">0h 0m 0s</div>
 
     <h3 class="timerheader">Set timer:</h3>
-    <div class="outputtimer"><output id="output" class="console">0</output> : <output id="outputMin" class="console">0</output></div>
-      <div class="buttons">
+   <!-- <div class="outputtimer"><output id="output" class="console">0</output> : <output id="outputMin" class="console">0</output></div> -->
+    <div class="outputtimer"><output id="timeoutput">00 : 00</output></div>
+    <input type="time" id="timeinput" placeholder="Time (format 00:00)" name="time" onchange="setTimer(this.value)"/>
+      <!-- <div class="buttons">
         <div class="button-wrapper">
             <button class="timerbuttons" data-number="1" type="button" class="button button--number">1</button>
             <button class="timerbuttons" data-number="2" type="button" class="button button--number">2</button>
@@ -25,12 +27,12 @@
           <div class="button-wrapper">
             <button class="timerbuttons" data-number="0" type="button" class="button button--number">0</button>
           </div>
-      </div>
+      </div> -->
     <div class="button-wrapper">
         <button id="start" type="button" class="button button--main">Start</button>
         <button id="reset" type="button" class="button button--main">Reset</button>
     </div>
     <h3 class="timerheader"><output id="setTimerOutput" class="console"> </output></h3>
-    <script src="../static/scripts/timer.js"></script>
+    <script src="../static/scripts/settimer.js"></script>
     <script src="../static/scripts/parkedtimer.js"></script>
 {% endblock %}
