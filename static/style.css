@@ -9,8 +9,6 @@ html, body {
 }
 
 main {
-    margin-left: 17%;
-    margin-right: 17%;
     margin-top: 20px;
 }
 
@@ -27,7 +25,11 @@ h1 {
     font-size: 105pt;
     margin:20px;
     width: 450px !important;
+}
 
+h1 > span {
+    font-family: "Avenir Next";
+    font-size: 105pt;
 }
 
 #parkFastLogo {
@@ -45,12 +47,14 @@ h1 {
     margin-left: 10px;
 }
 
-
-h1 > span {
+h3.timerheader {
     font-family: "Avenir Next";
-    font-size: 105pt;
+    font-weight: 600;
+    color: rgb(150, 154, 153);
+    font-size: 35pt;
+    margin: 5px;
+    text-align: center;
 }
-
 
 
 
@@ -104,7 +108,8 @@ hr {
 }
 
 h3.grayheader {
-    font-family: "Avenir Next Demi Bold";
+    font-family: "Avenir Next";
+    font-weight: 600;
     color: rgb(150, 154, 153);
     font-size: 25pt;
     margin: 5px;
@@ -143,16 +148,15 @@ button {
     font-family: "Avenir Next";
     color: rgb(150, 154, 153);
     font-size: 12pt;
-    font-weight: bold;
+    font-weight: 600;
     transition: background 0.2s ease-out, border 0.2s ease-out;
 }
 
 
-
-h3.timerheader {
-    font-family: "Avenir Next Demi Bold";
+p.infotext {
+    font-family: "Avenir Next";
     color: rgb(150, 154, 153);
-    font-size: 25pt;
+    font-size: 12pt;
     margin: 5px;
     text-align: center;
 }
@@ -183,73 +187,98 @@ button:hover {
 }
 
 div.outputtimer {
-    font-family: "Avenir Next Demi Bold";
-    color: rgb(150, 154, 153);
-    font-size: 30pt;
+    font-family: "Avenir Next";
+    font-weight: 600;
+    color: rgb(44, 147, 209);
+    font-size: 50pt;
     text-align: center;
     padding: 10px;
-    border-color: rgb(44, 147, 209);
-    border-style: solid;
-    border-radius: 25px;
-    border-width: 1pt;
-    width: 25%;
-    margin-left: 36.5%;
+    width: 35%;
+    margin-left: 30.5%;
 }
 
 div.outputparked {
-    font-family: "Avenir Next Demi Bold";
-    color: rgb(150, 154, 153);
-    font-size: 46pt;
+    font-family: "Avenir Next";
+    font-weight: 600;
+    color: rgb(44, 147, 209);
+    font-size: 60pt;
     text-align: center;
     padding: 10px;
-    border-width: 1pt;
-    border-color: rgb(44, 147, 209);
-    border-style: solid;
-    border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
+    width: 65%;
+    margin-left: 18%;
 }
 
-
-@media (max-width: 700px) {
-  #parkFastLogo {
-      border-style: solid;
-      border-color: rgb(44, 147, 209);
-      border-width: 2pt;
-      padding-top: 40px;
-      padding-right: 25px;
-      padding-left: 25px;
-      font-family: "DIN Condensed";
-      color: rgb(150, 154, 153);
-      margin-top: 60px;
-      margin-bottom: 70px;
-      margin-left: 10px;
-      visibility: hidden;
-  }
-div.outputtimer {
-    font-family: "Avenir Next Demi Bold";
-    color: rgb(150, 154, 153);
-    font-size: 20pt;
-    text-align: center;
-    padding: 10px;
-    border-color: rgb(44, 147, 209);
-    border-style: solid;
-    border-radius: 25px;
+input.timerinput {
     border-width: 1pt;
+    border-color: rgb(44, 147, 209);
+    border-radius: 25px;
+    border-style: solid;
+    padding: 15px 15px 15px 15px;
+    margin: 10px;
+    font-family: "Avenir Next";
+    color: rgb(150, 154, 153);
+    font-size: 15pt;
     width: 40%;
-    margin-left: 27%;
-}
-    div.outputparked {
-    font-family: "Avenir Next Demi Bold";
-    color: rgb(150, 154, 153);
-    font-size: 20pt;
+    margin-left: 28%;
     text-align: center;
-    padding: 10px;
-    border-width: 1pt;
-    border-color: rgb(44, 147, 209);
-    border-style: solid;
-    border-radius: 25px;
-    width: 50%;
-    margin-left: 23%;
+}
+
+@media (max-device-width: 700px) {
+    header {
+        height: 250pt;
+    }
+
+    h1 {
+        font-size: 200pt;
+        text-allin: center;
+        width: 700px !important;
+    }
+
+    h1 > span {
+        font-size: 200pt;
+    }
+
+    #parkFastLogo {
+        visibility: hidden;
+    }
+
+    h3.timerheader {
+        font-size: 6em;
+    }
+
+    div.outputparked {
+        font-size: 9em;
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+    input[type="time"]{
+        padding: 50px 15px 15px 15px;
+        -webkit-appearance: caret;
+
+    }
+    input[placeholder] {
+        font-size: 6em;
+    }
+
+    input::-webkit-input-placeholder {
+        text-align: center;
+    }
+
+    p.infotext {
+        font-size: 2em;
+    }
+
+    div.outputtimer {
+        font-size: 8em;
+        width: 50%;
+        margin-left: 23%;
+    }
+
+    button {
+        margin: 20px;
+        font-size: 3em;
+
 }
 }
