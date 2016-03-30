@@ -33,13 +33,13 @@ def login():
             cur = con.cursor()
             cur.execute('SELECT * FROM User WHERE username=?', user)
             checkusername = cur.fetchone()
-            print(checkusername)
+            print(checkusername[1])
             if checkusername:
                 cur.execute('SELECT userpassword FROM user WHERE username=?', user)
                 checkpassword = cur.fetchone()
                 print(checkpassword)
                 print("PAss: " + password)
-                if checkpassword == password:
+                if checkpassword[0] == password:
                     return redirect(url_for('timer'))
                 else:
                     return render_template('index.html', wrong='Wrong username or password')
