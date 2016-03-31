@@ -24,7 +24,6 @@ def login():
     username = (request.form['username'])
     password = (request.form['password'])
     user = (username,)
-    #password = (userpassword,)
     print('log in user %s' % username)
     with sql.connect(DATABASE) as con:
         try:
@@ -54,13 +53,25 @@ def login():
 def register():
     # registrer bruker, redirect til onsket sted
     print('register user %s' % request.form['newUsername'])
+    username = (request.form['newUsername'])
+    taken = (username,)
     with sql.connect(DATABASE) as con:
-        con.row_factory = sql.Row
-        cur = con.cursor()
-        cur.execute("INSERT INTO User (userID, userName, userPassword) VALUES (?,?,?)",
+        try:
+            con.row_factory = sql.Row
+            cur = con.cursor()
+            cur.execute ('SELECT username FROM User WHERE username=?', taken)
+            checkusername = cur.fetchone()
+            if checkusername:
+                return render_template('index.html', taken='Username is taken')
+            else:
+                cur.execute("INSERT INTO User (userID, userName, userPassword) VALUES (?,?,?)",
                     (None, request.form['newUsername'], request.form['newPassword']))
-        return redirect(url_for('timer'))
-    return render_template('index.html')
+                return redirect(url_for('timer'))
+        except Exception as e:
+           cur.execute("INSERT INTO User (userID, userName, userPassword) VALUES (?,?,?)",
+                    (None, request.form['newUsername'], request.form['newPassword']))
+           return redirect(url_for('timer'))
+    return render_template('index.html', taken='Username is taken')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=7000)
