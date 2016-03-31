@@ -48,12 +48,17 @@ h1 > span {
 }
 
 h3.timerheader {
-    font-family: "Avenir Next";
+    /*font-family: "Avenir Next";
     font-weight: 600;
     color: rgb(150, 154, 153);
     font-size: 35pt;
     margin: 5px;
-    text-align: center;
+    text-align: center;*/
+    font-family: "Avenir Next";
+    font-weight: 600;
+    color: rgb(150, 154, 153);
+    font-size: 25pt;
+    margin: 5px;
 }
 
 
@@ -130,12 +135,12 @@ input {
     margin: 10px;
     font-family: "Avenir Next";
     color: rgb(150, 154, 153);
-    font-size: 12pt;
+    font-size: 15pt;
 }
 
 ::-webkit-input-placeholder {
-   opacity: 0.4;
-    font-size: 9pt;
+    opacity: 0.4;
+    font-size: 15pt;
 }
 
 button {
@@ -152,13 +157,20 @@ button {
     transition: background 0.2s ease-out, border 0.2s ease-out;
 }
 
+button:hover {
+    cursor: pointer;
+    color: rgb(44, 147, 209);
+    background: rgb(150, 154, 153);
+    border-color: rgb(150, 154, 153);
+}
+
 
 p.infotext {
     font-family: "Avenir Next";
     color: rgb(150, 154, 153);
     font-size: 12pt;
     margin: 5px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 div.button-wrapper {
@@ -179,12 +191,6 @@ button.timerbuttons {
     padding: 15px 15px 15px 15px;
 }
 
-button:hover {
-    cursor: pointer;
-    color: rgb(44, 147, 209);
-    background: rgb(150, 154, 153);
-    border-color: rgb(150, 154, 153);
-}
 
 div.outputtimer {
     font-family: "Avenir Next";
