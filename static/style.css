@@ -122,8 +122,9 @@ h3.grayheader {
 
 div.center {
     margin: auto;
-    width: 55%;
+    width: 45%;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 input {
@@ -248,28 +249,40 @@ input.timerinput {
         visibility: hidden;
     }
 
+    div.center {
+        width: 80%;
+    }
+
     h3.timerheader {
-        font-size: 6em;
+        font-size: 3em;
     }
 
     div.outputparked {
-        font-size: 9em;
+        font-size: 7em;
         width: 100%;
         margin-left: 0;
     }
 
 
     input[type="time"]{
-        padding: 50px 15px 15px 15px;
+        padding: 40px 40px 40px 40px;
         -webkit-appearance: caret;
+        -webkit-box-sizing: border-box;
 
     }
+
     input[placeholder] {
-        font-size: 6em;
+        font-size: 3em;
+        padding: 40px 40px 40px 40px;
     }
 
     input::-webkit-input-placeholder {
         text-align: center;
+    }
+
+    button {
+        margin: 20px;
+        font-size: 3em;
     }
 
     p.infotext {
@@ -277,14 +290,9 @@ input.timerinput {
     }
 
     div.outputtimer {
-        font-size: 8em;
-        width: 50%;
-        margin-left: 23%;
+        font-size: 7em;
+        width: 100%;
+        margin-left: 0;
     }
 
-    button {
-        margin: 20px;
-        font-size: 3em;
-
-}
 }

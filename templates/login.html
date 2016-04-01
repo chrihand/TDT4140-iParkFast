@@ -4,18 +4,20 @@
     <div class="center">
         <h3 class="grayheader">Log in</h3>
         {% if wrong %}
-            <p class="infotext">{{ wrong }}</p>
+            <p id="textoutput" class="infotext">{{ wrong }}</p>
         {% endif %}
 
         <form method="post" action="{{ url_for('login') }}">
             <input type="text" name="username" value="" autocomplete="off" placeholder="Username" required/>
             <input type="password" name="password" value="" autocomplete="off" placeholder="Password" required/>
-            <button type="submit">Log in</button>
+            <button id="showoutput" type="submit">Log in</button>
         </form>
+    </div>
 
+    <div class="center">
         <h3 class="grayheader">Sign up</h3>
         {% if taken %}
-            <p class="infotext">{{ taken }}</p>
+            <p id="textoutput" class="infotext">{{ taken }}</p>
         {% endif %}
 
         <form method="post" action="{{ url_for('register') }}">
@@ -24,4 +26,7 @@
             <button type="submit">Sign up</button>
         </form>
     </div>
+
+    <script src="../static/scripts/texttimer.js"></script>
+
 {% endblock %}
