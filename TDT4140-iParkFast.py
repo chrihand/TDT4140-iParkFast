@@ -45,7 +45,7 @@ def login():
                 return render_template('login.html', wrong='Wrong username or password')
         except Exception as e:
             print(str(e))
-    return render_template('login.html', wrong='Wrong username or password')
+            return render_template('login.html', wrong='Wrong username or password')
 
 
 # A user can register a new account if the username is not in the database.
@@ -69,8 +69,8 @@ def register():
                     (None, request.form['newUsername'], request.form['newPassword']))
                 return redirect(url_for('timer'))
         except Exception as e:
-           print(str(e))
-    return render_template('login.html', taken='Username is taken')
+            print(str(e))
+            return render_template('login.html', taken='Username is taken')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=7000)
