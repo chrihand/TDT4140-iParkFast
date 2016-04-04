@@ -69,7 +69,7 @@ function checkTimer() {
             displayOutput.innerHTML = "Timer is wrong, set new time."
             setTimeout(function() {
                 displayOutput.innerHTML=''
-            }, 50000);
+            }, 10000);
         }
     } else if (hoursNow < hours) {
         if (minNow <= minutes) {
@@ -96,14 +96,14 @@ function checkTimer() {
             displayOutput.innerHTML = "Timer is wrong, set new time."
             setTimeout(function() {
                 displayOutput.innerHTML=''
-            }, 50000);
+            }, 10000);
         }
     } else {
         console.log("Timer is wrong")
         displayOutput.innerHTML = "Timer is wrong, set new time."
         setTimeout(function () {
             displayOutput.innerHTML = ''
-        }, 50000);
+        }, 10000);
 
     }
 }

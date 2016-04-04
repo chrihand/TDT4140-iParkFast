@@ -12,12 +12,15 @@ DATABASE = os.path.dirname(os.path.abspath(__file__)) + '/users.db' # In same fo
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/timer')
 def timer():
     return render_template('timer.html')
 
+
+# A user can log in if it has a username and password in the database.
+# If username and password is correct the user is sent to the timer site.
 @app.route('/login', methods=['POST'])
 def login():
     # Logger inn brukeren
@@ -27,28 +30,26 @@ def login():
     print('log in user %s' % username)
     with sql.connect(DATABASE) as con:
         try:
-            print('hei')
             con.row_factory = sql.Row
             cur = con.cursor()
             cur.execute('SELECT * FROM User WHERE username=?', user)
             checkusername = cur.fetchone()
-            print(checkusername[1])
             if checkusername:
                 cur.execute('SELECT userpassword FROM user WHERE username=?', user)
                 checkpassword = cur.fetchone()
-                print(checkpassword)
-                print("PAss: " + password)
                 if checkpassword[0] == password:
                     return redirect(url_for('timer'))
                 else:
-                    return render_template('index.html', wrong='Wrong username or password')
+                    return render_template('login.html', wrong='Wrong username or password')
             else:
-                return render_template('index.html', wrong='Wrong username or password')
+                return render_template('login.html', wrong='Wrong username or password')
         except Exception as e:
             print(str(e))
-    return render_template('index.html', wrong='Wrong username or password')
+            return render_template('login.html', wrong='Wrong username or password')
 
 
+# A user can register a new account if the username is not in the database.
+# The user is sent to the timer site when a unused username is entered together with a password.
 @app.route('/register', methods=['POST'])
 def register():
     # registrer bruker, redirect til onsket sted
@@ -62,16 +63,14 @@ def register():
             cur.execute ('SELECT username FROM User WHERE username=?', taken)
             checkusername = cur.fetchone()
             if checkusername:
-                return render_template('index.html', taken='Username is taken')
+                return render_template('login.html', taken='Username is taken')
             else:
                 cur.execute("INSERT INTO User (userID, userName, userPassword) VALUES (?,?,?)",
                     (None, request.form['newUsername'], request.form['newPassword']))
                 return redirect(url_for('timer'))
         except Exception as e:
-           cur.execute("INSERT INTO User (userID, userName, userPassword) VALUES (?,?,?)",
-                    (None, request.form['newUsername'], request.form['newPassword']))
-           return redirect(url_for('timer'))
-    return render_template('index.html', taken='Username is taken')
+            print(str(e))
+            return render_template('login.html', taken='Username is taken')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=7000)
