@@ -22,6 +22,7 @@ def timer():
 # A user can log in if it has a username and password in the database.
 # If username and password is correct the user is sent to the timer site.
 @app.route('/login', methods=['POST'])
+@app.route('/login/<username>')
 def login():
     # Logger inn brukeren
     username = (request.form['username'])
@@ -38,7 +39,9 @@ def login():
                 cur.execute('SELECT userpassword FROM user WHERE username=?', user)
                 checkpassword = cur.fetchone()
                 if checkpassword[0] == password:
-                    return redirect(url_for('timer'))
+                    print("User: " , username)
+                    #return redirect(url_for('timer', loginUsername=''))
+                    return render_template('timer.html', loginUsername=username)
                 else:
                     return render_template('login.html', wrong='Wrong username or password')
             else:
@@ -67,7 +70,7 @@ def register():
             else:
                 cur.execute("INSERT INTO User (userID, userName, userPassword) VALUES (?,?,?)",
                     (None, request.form['newUsername'], request.form['newPassword']))
-                return redirect(url_for('timer'))
+                return render_template('timer.html', loginUsername=username)
         except Exception as e:
             print(str(e))
             return render_template('login.html', taken='Username is taken')

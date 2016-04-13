@@ -48,12 +48,7 @@ h1 > span {
 }
 
 h3.timerheader {
-    /*font-family: "Avenir Next";
-    font-weight: 600;
-    color: rgb(150, 154, 153);
-    font-size: 35pt;
-    margin: 5px;
-    text-align: center;*/
+    padding-top: 30px;
     font-family: "Avenir Next";
     font-weight: 600;
     color: rgb(150, 154, 153);
@@ -127,6 +122,12 @@ div.center {
     margin-bottom: 20px;
 }
 
+.logoutImage {
+    width:30px;
+    height:30px;
+    padding: 0 70px 0 0;
+}
+
 input {
     border-width: 1pt;
     border-color: rgb(44, 147, 209);
@@ -143,6 +144,7 @@ input {
     opacity: 0.4;
     font-size: 15pt;
 }
+
 
 button {
     border-width: 3pt;
@@ -253,6 +255,11 @@ input.timerinput {
         width: 80%;
     }
 
+    .logoutImage {
+        width:40px;
+        height:40px;
+    }
+
     h3.timerheader {
         font-size: 3em;
     }
@@ -280,9 +287,25 @@ input.timerinput {
         text-align: center;
     }
 
+    .loginInput {
+        border-width: 1pt;
+        border-color: rgb(44, 147, 209);
+        border-radius: 25px;
+        border-style: solid;
+        /*padding: 15px 0px 15px 15px;*/
+        margin: 10px;
+        font-family: "Avenir Next";
+        color: rgb(150, 154, 153);
+        font-size: 15pt;
+        width: 30%;
+        height: 5px;
+        margin-left: 10px;
+        align: left;
+}
+
     button {
         margin: 20px;
-        font-size: 3em;
+        font-size: 2em;
     }
 
     p.infotext {
