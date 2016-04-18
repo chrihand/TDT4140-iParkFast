@@ -7,6 +7,8 @@ var reset = document.getElementById("reset");
 var displayTime = document.getElementById("timeoutput");
 var displayOutput = document.getElementById("setTimerOutput");
 
+var hideSetimer = document.querySelector('.hide-settimer');
+
 var intervalTime;
 var hoursNow = new Date().getHours()
 var minNow = new Date().getMinutes()
@@ -122,5 +124,5 @@ start.addEventListener("click", function() {
 // Resets time when reset button is clicked.
 reset.addEventListener("click", function() {
     clearInterval(intervalTime);
-	displayTime.innerHTML = "00 : 00";
+    displayTime.innerHTML = "00 : 00";
 });
