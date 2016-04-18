@@ -10,17 +10,23 @@
         {% endif %}
         <div class="outputparked" id="parkedoutput">0h 0m 0s</div>
 
-        <h3 class="timerheader">Set your timer:</h3>
-        <p class="infotext">Set the timer to the time when your parking ends</p>
-        <input type="time" class="timerinput" id="timeinput" placeholder="00:00" onfocus="this.placeholder = ''" name="time" onchange="setTimer(this.value)"/>
-        <div class="button-wrapper">
-            <button id="start" type="button" class="button button--main">Start</button>
-            <button id="reset" type="button" class="button button--main">Reset</button>
+        <div class="hide-settimer">
+            <h3 class="timerheader">Set your timer:</h3>
+            <p class="infotext">Set the timer to the time when your parking ends</p>
+            <input type="time" class="timerinput" id="timeinput" placeholder="00:00" onfocus="this.placeholder = ''" name="time" onchange="setTimer(this.value)"/>
+            <div class="button-wrapper">
+                <button id="start" type="button" class="button button--main">Start</button>
+                <button id="reset" type="button" class="button button--main">Reset</button>
+            </div>
         </div>
 
-        <h3 class="timerheader">The timer is sat to:</h3>
-        <div class="outputtimer"><output id="timeoutput">00 : 00</output></div>
+
         <p class="infotext"><output id="setTimerOutput" class="console"> </output></p>
+
+        <div class="hide-timer">
+            <h3 class="timerheader">The timer is sat to:</h3>
+            <div class="outputtimer"><output id="timeoutput">00 : 00</output></div>
+        </div>
     </div>
 
     <script src="../static/scripts/settimer.js"></script>
