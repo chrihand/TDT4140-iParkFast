@@ -14,9 +14,10 @@ DATABASE = os.path.dirname(os.path.abspath(__file__)) + '/users.db' # In same fo
 def index():
     return render_template('login.html')
 
-@app.route('/timer')
-def timer():
-    return render_template('timer.html')
+
+@app.route('/parked')
+def parked():
+    return render_template('parked.html')
 
 
 # A user can log in if it has a username and password in the database.
