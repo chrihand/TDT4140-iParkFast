@@ -4,6 +4,13 @@ from flask import render_template
 import sqlite3 as sql
 from flask import request
 import os
+import threading
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 app = Flask(__name__)
 app._static_folder = "static"
@@ -12,11 +19,20 @@ DATABASE = os.path.dirname(os.path.abspath(__file__)) + '/users.db' # In same fo
 
 @app.route('/')
 def index():
+    file = open(os.path.dirname(os.path.abspath(__file__)) + '/static/active.txt', "w")
+    file.write('0')
+    file.close()
     return render_template('login.html')
+
 
 @app.route('/timer')
 def timer():
+    threading.Thread(target=button, args=()).start()
     return render_template('timer.html')
+
+@app.route('/parked')
+def parked():
+    return render_template('parked.html')
 
 
 # A user can log in if it has a username and password in the database.
@@ -74,6 +90,16 @@ def register():
         except Exception as e:
             print(str(e))
             return render_template('login.html', taken='Username is taken')
+
+def button():
+    while True:
+        input_state = GPIO.input(18)
+        if input_state == False:
+            file = open(os.path.dirname(os.path.abspath(__file__)) + '/static/active.txt', "w")
+            file.write('1')
+            file.close()
+            time.sleep(2)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=7000)
