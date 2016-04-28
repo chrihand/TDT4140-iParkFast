@@ -94,3 +94,9 @@ def button():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=7000)
+
+@app.route('/parked')
+def parked():
+    return render_template('parked.html')
+
+
