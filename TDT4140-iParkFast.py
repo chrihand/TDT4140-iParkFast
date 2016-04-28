@@ -91,14 +91,14 @@ def register():
             print(str(e))
             return render_template('login.html', taken='Username is taken')
 
-def button():
-    while True:
-        input_state = GPIO.input(18)
-        if input_state == False:
-            file = open(os.path.dirname(os.path.abspath(__file__)) + '/static/active.txt', "w")
-            file.write('1')
-            file.close()
-            time.sleep(2)
+ def button():
+     while True:
+         input_state = GPIO.input(18)
+         if input_state == False:
+             file = open(os.path.dirname(os.path.abspath(__file__)) + '/static/active.txt', "w")
+             file.write('1')
+             file.close()
+             time.sleep(2)
 
 
 if __name__ == '__main__':
